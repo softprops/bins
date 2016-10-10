@@ -7,7 +7,7 @@ env:
   global:
     - BIN=$(echo $TRAVIS_REPO_SLUG | cut -d '/' -f2)
 script:
-  - echo "tagging should produce artifact: ${BIN}-${TRAVIS_OS_NAME}-${TRAVIS_TAG}.tar.gz "
+  - echo ${BIN}-${TRAVIS_OS_NAME}-${TRAVIS_TAG}.tar.gz
 before_deploy:
   - cargo build --release
   - cd target/release
